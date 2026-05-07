@@ -1,0 +1,2 @@
+To log into the Database, you gotta make a file called. "password.csv". And in that file you will get your postgres password. 
+That should correctly log you correctly into the postgres database, asuming that the other information in the connectionString is correct.
