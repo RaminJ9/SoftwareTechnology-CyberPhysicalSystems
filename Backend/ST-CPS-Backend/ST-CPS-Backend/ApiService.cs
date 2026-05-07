@@ -44,7 +44,7 @@ public class ApiService
                    CurrentWeather data = JsonSerializer.Deserialize<CurrentWeather>(json); 
                    DataForDB snapshot = new DataForDB() 
                    { 
-                        Timestamp = DateTime.Parse(data.current.time), 
+                        Timestamp = data.current.time, 
                         Temperature = data.current.temperature_2m, 
                         Humidity = data.current.relative_humidity_2m, 
                         WindSpeed = data.current.wind_speed_10m

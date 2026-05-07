@@ -5,7 +5,7 @@
     public class WeatherValues // hourly
     {
         
-        public string time {get; set;}
+        public DateTime time {get; set;}
         public double temperature_2m  {get; set;}
         public int relative_humidity_2m {get; set;}
         public double wind_speed_10m {get; set;}

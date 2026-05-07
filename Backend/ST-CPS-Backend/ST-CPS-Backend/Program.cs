@@ -20,6 +20,7 @@ public class program
         await DbMeth.CreateDataTable();
         var asd = ApiService.GetInstance();
         await asd.ApiServiceMethod();
+        await DbMeth.FetchData();
         
         // Add services to the container.
 

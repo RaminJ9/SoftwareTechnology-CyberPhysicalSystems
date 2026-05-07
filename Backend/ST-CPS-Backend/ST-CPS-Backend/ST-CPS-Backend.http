@@ -1,8 +1,11 @@
-@ST_CPS_Backend_HostAddress = http://localhost:5256
+@root_url = http://localhost:5256
 
-GET {{ST_CPS_Backend_HostAddress}}/weatherforecast/
+GET {{root_url}}/weatherforecast/
 Accept: application/json
 
 ###
 
+GET {{root_url}}/values/weather
+Accept: application/json
 
+###

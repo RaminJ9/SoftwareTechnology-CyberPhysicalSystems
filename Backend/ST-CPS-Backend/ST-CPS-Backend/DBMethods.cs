@@ -108,7 +108,38 @@ public class DBMethods
         }
         
     }
+
     
+    public async Task<List<WeatherValues>> FetchData()
+    {
+        var results = new List<WeatherValues>();
+        try
+        { // takes the last 24 hours of data
+            await using (var cmd = new NpgsqlCommand(@"SELECT * FROM ""weatherdata"" 
+                WHERE ""timestamp"" >= NOW() - INTERVAL '24 hours'
+                ORDER BY ""timestamp"" DESC", connection))
+            {
+                // The command returns a stream of rows, and then the reader reads each of those rows at a time.
+                await using var reader = await cmd.ExecuteReaderAsync(); // (Reader) for fetching data, instead of modifying
+                while (await reader.ReadAsync()) // Reads 1 row at a time, and works like a loop.
+                {
+                    results.Add(new WeatherValues
+                    {
+                        temperature_2m = reader.GetDouble(reader.GetOrdinal("temperature")),
+                        relative_humidity_2m = reader.GetInt32(reader.GetOrdinal("humidity")),
+                        wind_speed_10m = reader.GetDouble(reader.GetOrdinal("windspeed")),
+                        time = reader.GetDateTime(reader.GetOrdinal("timestamp"))
+                    });
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+        return results;
+    }
     
     
 
