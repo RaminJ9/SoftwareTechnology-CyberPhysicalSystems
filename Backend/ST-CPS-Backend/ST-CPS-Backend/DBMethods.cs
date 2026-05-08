@@ -76,7 +76,7 @@ public class DBMethods
     {
         try
         {
-            await using (var cmd = new NpgsqlCommand(@"INSERT INTO WeatherData (timestamp, temperature, humidity, windspeed) VALUES (@time, @temp, @humidity, @windspeed)", connection))
+            await using (var cmd = new NpgsqlCommand(@"INSERT INTO WeatherData (timestamp, temperature, humidity, windspeed) VALUES (@time, @temp, @humidity, @windspeed) ON CONFLICT DO NOTHING", connection))
             {
                 cmd.Parameters.AddWithValue("@time", snapshot.Timestamp);
                 cmd.Parameters.AddWithValue("@temp", snapshot.Temperature);
@@ -117,7 +117,7 @@ public class DBMethods
         { // takes the last 24 hours of data
             await using (var cmd = new NpgsqlCommand(@"SELECT * FROM ""weatherdata"" 
                 WHERE ""timestamp"" >= NOW() - INTERVAL '24 hours'
-                ORDER BY ""timestamp"" DESC", connection))
+                ORDER BY ""timestamp"" ASC", connection))
             {
                 // The command returns a stream of rows, and then the reader reads each of those rows at a time.
                 await using var reader = await cmd.ExecuteReaderAsync(); // (Reader) for fetching data, instead of modifying

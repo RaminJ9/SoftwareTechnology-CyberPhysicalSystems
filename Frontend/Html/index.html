@@ -5,24 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../Css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../JS/script.js" defer></script>
 </head>
 <body>
     <div id="outerContainer">
         <div id="container">
             <aside id="asideLeft">
-                <!-- Choose what information to see here -->
+                <div>
+                    Chose data to see
+                </div>
+                <button id="ButtonTemp">Temperature</button>
+                <button id="ButtonHumidity">Humidity</button>
+                <button id="ButtonWindSpeed">Wind Speed</button>
             </aside>
 
             <main id="main">
-                <!-- Graph here -->
                 
+                <canvas id="weatherGraph"></canvas>
 
 
             </main>
 
             <aside id="asideRight">
-                <!-- Summary of different days here -->
+                Summeries
             </aside>
         </div>
     </div>

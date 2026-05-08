@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ST-CPS-Backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f9549600ab0d3b08ba19187045754bdb13b6f308")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7cf02906ac3a27c070f9c9ce1affd56e09be5dce")]
 [assembly: System.Reflection.AssemblyProductAttribute("ST-CPS-Backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ST-CPS-Backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
