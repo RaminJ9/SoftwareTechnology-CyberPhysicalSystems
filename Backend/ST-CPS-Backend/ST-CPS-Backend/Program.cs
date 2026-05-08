@@ -16,13 +16,14 @@ public class program
         
          
         Connection = await Authentication.StartConnection(); // starts connection to the database
+        
         DbMeth = new DBMethods(Connection); // Creates object so we can use the SQL commands.
         // await DbMeth.DeleteDataTable();
-        // await DbMeth.CreateDataTable();
+        await DbMeth.CreateDataTable();
         // these below will be removed, they are just for testing.
-        var asd = ApiService.GetInstance(); // singleton of the apiservice, that is being used.
-        await asd.ApiServiceMethod(); // the api call method.
-        await DbMeth.FetchData(); // fetches the data
+        // var asd = ApiService.GetInstance(); // singleton of the apiservice, that is being used.
+        // await asd.ApiServiceMethod(); // the api call method.
+        // await DbMeth.FetchData(); // fetches the data
         
         // Add services to the container.
 
