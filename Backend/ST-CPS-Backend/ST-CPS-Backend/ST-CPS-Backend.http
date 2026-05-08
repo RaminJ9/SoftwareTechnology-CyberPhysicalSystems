@@ -5,7 +5,7 @@ Accept: application/json
 
 ###
 
-GET {{root_url}}/values/weather
+GET {{root_url}}/api/values/weather
 Accept: application/json
 
 ###

@@ -1,82 +1,30 @@
-body{
-    margin: 0%;
-    padding: 0%;
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
 }
 
-#container{
-
-    margin: 5%;
-    display: grid;
-    grid-template-columns: 30%, 70%;
-    height: 100%;
-    width: 100%;
-}
-
-#aside{
-    background-color: rgb(93, 93, 93);
-    height: 100%;
-    width: 100%;
-    grid-column: 1;
-    display: grid;
-    grid-template-rows: 25%;
-
-}
-
-.button{
+#outerContainer {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
     align-items: center;
-  background-color: #0A66C2;
-  border: 0;
-  border-radius: 100px;
-  box-sizing: border-box;
-  color: #ffffff;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  justify-content: center;
-  line-height: 20px;
-  max-width: 480px;
-  min-height: 40px;
-  min-width: 0px;
-  overflow: hidden;
-  padding: 0px;
-  padding-left: 20px;
-  padding-right: 20px;
-  text-align: center;
-  touch-action: manipulation;
-  transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
-  user-select: none;
-  -webkit-user-select: none;
-  vertical-align: middle;
+    padding: 40px;
+    box-sizing: border-box;
 }
 
-.button:hover,
-.button:focus { 
-  background-color: #16437E;
-  color: #ffffff;
+#container {
+    width: min(90vw, 1400px);
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    gap: 50px;
+    box-sizing: border-box;
 }
 
-.button:active {
-  background: #09223b;
-  color: rgb(255, 255, 255, .7);
-}
-
-.button:disabled { 
-  cursor: not-allowed;
-  background: rgba(0, 0, 0, .08);
-  color: rgba(0, 0, 0, .3);
-}
-
-
-#segment{
-
-    background-color: grey;
-    grid-column: 2;
-    width: 100%;
-    height: 100%;
-
-
-
-
+#asideLeft,
+#main,
+#asideRight {
+    border: 4px solid black;
+    height: 500px;
+    box-sizing: border-box;
 }
